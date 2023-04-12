@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: d40de432a8533b24a8cd946646399fad
   - enabled: 0
     path: Assets/Scenes/GameHub.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CrystalMountain.unity
     guid: e04d0ba8c2697444489ae190d7c999ce
+  - enabled: 1
+    path: Assets/Scenes/CM-2.unity
+    guid: b99bfe717e1edb04da985efdeaa0ad54
   m_configObjects: {}

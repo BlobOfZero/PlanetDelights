@@ -65,7 +65,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5304618060016711117, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}
       propertyPath: m_Name
-      value: Ruin-Fl-v0
+      value: Ruin-Fl-v0 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503304233577945341, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}
+      propertyPath: m_Size.x
+      value: 62.933113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503304233577945341, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}
+      propertyPath: m_Size.y
+      value: 481.95685
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503304233577945341, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}
+      propertyPath: m_Size.z
+      value: 64.30933
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503304233577945341, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}
+      propertyPath: m_Center.x
+      value: -0.031898256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503304233577945341, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}
+      propertyPath: m_Center.y
+      value: 136.68456
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503304233577945341, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}
+      propertyPath: m_Center.z
+      value: -0.3266125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10d9c57a782384438beb4c8e7ef8e11, type: 3}

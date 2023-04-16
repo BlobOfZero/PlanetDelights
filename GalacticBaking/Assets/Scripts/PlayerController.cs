@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private InputAction shootAction;
     private InputAction jetpackAction;
     private InputAction pauseAction;
+    private InputAction shopAction;
 
     // Ammo var
     private int maxAmmo = 10;
@@ -60,9 +61,6 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
     public bool loseState = false;
 
-    // Interactions
-    [SerializeField] private float interactDistance = 3f;
-
     // Sound effects
     public AudioClip gunFireSound;
 
@@ -76,6 +74,7 @@ public class PlayerController : MonoBehaviour
         shootAction = playerInput.actions["Shoot"];
         jetpackAction = playerInput.actions["Jetpack"];
         pauseAction = playerInput.actions["Pause"];
+        shopAction = playerInput.actions["Shop"];
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

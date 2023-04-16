@@ -2,20 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.Video;
 
 public class MenuController : MonoBehaviour
 {
-    public Canvas main;
+    public GameObject main;
     public Canvas credits;
     public Canvas options;
+    public Canvas vidCanvas;
+    public VideoPlayer video;
+    
 
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        video = GetComponent<VideoPlayer>();
+        vidCanvas.gameObject.SetActive(false);
     }
+
+    void OnEnable()
+    {
+        video .loopPointReached += LoadScene;
+    }
+
     public void Play()
+    {
+        video.Play();
+        vidCanvas.gameObject.SetActive(true);
+        main.gameObject.SetActive(false);
+    }
+
+    void LoadScene(VideoPlayer vp)
     {
         SceneManager.LoadScene("CrystalMountain");
     }

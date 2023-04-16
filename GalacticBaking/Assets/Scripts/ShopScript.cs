@@ -5,32 +5,18 @@ using UnityEngine;
 public class ShopScript : MonoBehaviour
 {
     public GameObject gameManager;
-    private PlayerInventory inventory;
-    public GameObject displayItem;
-    public Canvas shopCanvas;
+    PlayerController controller;
 
-    [SerializeField] private GameObject desplayItem;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        GameObject gameManager = GameObject.Find("GameManager");
-        inventory = gameManager.GetComponent<PlayerInventory>();
-        shopCanvas.gameObject.SetActive(false);
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
-    void OnTriggerEnter()
+    private void OnTriggerEnter(Collider collider)
     {
-        if(inventory.killCoins >= 5)
+        if(collider.gameObject.CompareTag("Player"))
         {
-        inventory.SubtractCoinsAmmo(5);
-        gameObject.SetActive(false);
-        displayItem.SetActive(false);
+            controller.OpenShop();
         }
-    }
-
-    public void OpenShop()
-    {
-        shopCanvas.gameObject.SetActive(true);
     }
 }

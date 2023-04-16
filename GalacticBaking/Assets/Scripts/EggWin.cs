@@ -7,6 +7,9 @@ using TMPro;
 public class EggWin : MonoBehaviour
 {
     public TextMeshProUGUI winTXT;
+
+    public PlayerInventory inventory;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +19,10 @@ public class EggWin : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && inventory.easyEnemy == 3)
         {
-            winTXT.gameObject.SetActive(true);
+            //SceneManager.LoadScene("GameHub");
+            inventory.AddLevelWin(1);
         }
     }
 }

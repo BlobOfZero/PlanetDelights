@@ -332,17 +332,6 @@
                 },
                 {
                     "name": "",
-                    "id": "5f66b477-c7c1-431f-9c92-4ece0d7552df",
-                    "path": "<Gamepad>/select",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shop",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ff17e2d7-aa64-4ae6-b955-941097f40c20",
                     "path": "<Keyboard>/escape",
                     "interactions": "",

@@ -9,7 +9,7 @@ public class SnowTP : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("WinterWastes");
+            SceneManager.LoadScene("AQ-2");
         }
     }
 }

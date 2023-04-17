@@ -9,7 +9,7 @@ public class DesertTP : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Desert");
+            SceneManager.LoadScene("D-2");
         }
     }
 }

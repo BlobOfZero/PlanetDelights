@@ -33,10 +33,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        pauseMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        
+     SceneManager.LoadScene("GameHub");   
     }
 
     public void MainMenu()

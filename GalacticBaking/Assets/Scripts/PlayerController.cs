@@ -60,9 +60,6 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
     public bool loseState = false;
 
-    // Interactions
-    [SerializeField] private float interactDistance = 3f;
-
     // Sound effects
     public AudioClip gunFireSound;
 

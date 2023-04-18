@@ -22,27 +22,32 @@ public class SwitchVCam : MonoBehaviour
         aimCanvas.enabled = false;
     }
     
-    private void OnEnable()
+        private void OnEnable()
     {
-        aimAction.performed += _ => StartAim();
-        aimAction.canceled += _ => CancelAim();
+        aimAction.performed += StartAim;
+        aimAction.canceled += CancelAim;
     }
 
     private void OnDisable()
     {
-    aimAction.performed -= _ => StartAim();
-    aimAction.canceled -= _ => CancelAim();
+        aimAction.performed -= StartAim;
+        aimAction.canceled -= CancelAim;
     }
 
-    
-    private void StartAim()
+    //private void OnDestroy()
+    //{
+    //    aimAction.performed -= _ => StartAim();
+    //    aimAction.canceled -= _ => CancelAim();
+    //}
+
+    private void StartAim(InputAction.CallbackContext ctx)
     {
         virtualCamera.Priority += priorityBoostAmount;
         aimCanvas.enabled = true;
         thirdPersonCanvas.enabled = false;
     }
     
-    private void CancelAim()
+    private void CancelAim(InputAction.CallbackContext ctx)
     {
         virtualCamera.Priority -= priorityBoostAmount;
         thirdPersonCanvas.enabled = true;

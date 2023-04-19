@@ -161,6 +161,7 @@ public class PlayerController : MonoBehaviour
     if(currentHealth <= 0)
     {
         loseState = true;
+        Destroy(gameObject);
     }
 
     HealthText.text = "Current health; " + currentHealth;
@@ -170,6 +171,7 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.GetComponent<PauseMenu>().PauseGame();
         iisPaused = true;
+        Time.timeScale = 0;
     }
     }
 

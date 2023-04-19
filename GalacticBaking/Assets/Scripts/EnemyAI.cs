@@ -6,7 +6,6 @@ public class EnemyAI : MonoBehaviour
     private PlayerInventory inventory;
     [SerializeField] public int maxHealth = 3;
     [SerializeField] private int currentHealth;
-    public GameObject player;
     PlayerController controller;
 
 
@@ -35,7 +34,8 @@ public class EnemyAI : MonoBehaviour
         inventory = gameManager.GetComponent<PlayerInventory>();
         playerTransform = GameObject.Find("Chef").transform;
         agent = GetComponent<NavMeshAgent>();
-        controller = GetComponent<PlayerController>();
+        GameObject  player = GameObject.Find("Chef");
+        controller = player.GetComponent<PlayerController>();
     }
 
     // Start is called before the first frame update
@@ -96,6 +96,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player hit");
             controller.PlayerTakeDamage(20);
         }
     }

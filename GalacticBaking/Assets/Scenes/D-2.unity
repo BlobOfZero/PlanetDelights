@@ -4365,6 +4365,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e495c5666998eaa4295bc4489765b825, type: 3}
+--- !u!1 &627023897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6928818648434854159, guid: 586676384cffe3a468095cc407ed8109, type: 3}
+  m_PrefabInstance: {fileID: 963575806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &646684783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5983,7 +5988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.005236233, y: 0, z: 0, w: 0.9999863}
-  m_LocalPosition: {x: 206.25578, y: 2.4793723, z: -3.4120955}
+  m_LocalPosition: {x: 206.25652, y: 2.4793723, z: -3.4120955}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6038,7 +6043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947560075828, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129.26518
+      value: 129.26591
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947560075828, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6054,7 +6059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947674310362, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129.02847
+      value: 129.02905
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947674310362, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7118,6 +7123,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 274944999746661244, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1228063893}
+    - target: {fileID: 274944999746661244, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
     - target: {fileID: 274945000520131033, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8169,7 +8182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1431555476}
-  player: {fileID: 0}
+  player: {fileID: 627023897}
 --- !u!114 &1228063893
 MonoBehaviour:
   m_ObjectHideFlags: 0

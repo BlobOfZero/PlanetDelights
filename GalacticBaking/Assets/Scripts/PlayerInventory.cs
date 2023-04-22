@@ -13,6 +13,10 @@ public class PlayerInventory : MonoBehaviour
     private PlayerController controller;
     private BulletController bulletController;
 
+    public static int winObjects;
+
+    public int easyEnemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,11 @@ public class PlayerInventory : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+        
+        if(winObjects == 3)
+        {
+            
         }
     }
 
@@ -86,7 +95,6 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    
     public void SubtractWeaponUpgrade1(int amount)
     {
         if(killCoins >= 10)
@@ -96,6 +104,24 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             return;
+        }
+    }
+
+    public void AddLevelWin(int amount)
+    {
+        winObjects += amount;
+    }
+
+    public void EnemyKIlled(int amount)
+    {
+        easyEnemy += amount;
+    }
+
+    public void levelBeat(int amount)
+    {
+        if(winObjects >= 3)
+        {
+            Debug.Log("You win");
         }
     }
 }

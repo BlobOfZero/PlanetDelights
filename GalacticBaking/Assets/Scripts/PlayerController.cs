@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     private InputAction jumpAction;
     private InputAction shootAction;
     private InputAction jetpackAction;
-    private InputAction shopAction;
     private InputAction pauseAction;
 
     // Ammo var
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     // jetpack var
     public float currentFuel;
-    private float maxFuel = 5f;
+    private float maxFuel = 10f;
      Rigidbody rigid;
 
     // shop vars
@@ -61,6 +60,9 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
     public bool loseState = false;
 
+    // Interactions
+    [SerializeField] private float interactDistance = 3f;
+
     // Sound effects
     public AudioClip gunFireSound;
 
@@ -73,7 +75,6 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         shootAction = playerInput.actions["Shoot"];
         jetpackAction = playerInput.actions["Jetpack"];
-        shopAction = playerInput.actions["Shop"];
         pauseAction = playerInput.actions["Pause"];
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -127,6 +128,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        // ground movement
+        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector3 move = new Vector3(input.x, 0, input.y);
+        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+
+        controller.Move(move * Time.deltaTime * playerSpeed);
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
+
         // jumping
         MovementJump();
         
@@ -138,6 +150,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Fly function triggered");
         }
 
+        // recharge feul
+        if(currentFuel < maxFuel && controller.isGrounded)
+        {
+            currentFuel += Time.deltaTime;
+        }
+
         // Rotating the player object
     Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -145,16 +163,7 @@ public class PlayerController : MonoBehaviour
          // killing the player
     if(currentHealth <= 0)
     {
-        gameObject.SetActive(false);
         loseState = true;
-    }
-
-    // opening the shop ui
-    if(shopAction.triggered)
-    {
-       OpenShop();
-       shopOpen = true;
-
     }
 
     HealthText.text = "Current health; " + currentHealth;
@@ -166,22 +175,6 @@ public class PlayerController : MonoBehaviour
         iisPaused = true;
     }
     }
-
-    void FixedUpdate()
-    {  
-        
-        // ground movement
-        Vector2 input = moveAction.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
-        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
-
-        controller.Move(move * Time.deltaTime * playerSpeed);
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
-    }
-
 
     public void PlayerTakeDamage(int damage)
     {

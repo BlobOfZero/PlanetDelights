@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour
         inventory = gameManager.GetComponent<PlayerInventory>();
         playerTransform = GameObject.Find("Chef").transform;
         agent = GetComponent<NavMeshAgent>();
-        controller = player.GetComponent<PlayerController>();
+        controller = GetComponent<PlayerController>();
     }
 
     // Start is called before the first frame update
@@ -108,6 +108,7 @@ public class EnemyAI : MonoBehaviour
         {
             Destroy(gameObject);
             inventory.AddCoins(5);
+            inventory.EnemyKIlled(1);
             Debug.Log("Enemy Destroyed");
         }
     }

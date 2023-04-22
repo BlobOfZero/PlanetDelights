@@ -15,7 +15,7 @@ public class PlayerInventory : MonoBehaviour
 
     public int winObjects;
 
-    public int easyEnemy;
+    public int Enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +47,10 @@ public class PlayerInventory : MonoBehaviour
         
         if(winObjects == 3)
         {
-            
+            winPanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -110,11 +113,12 @@ public class PlayerInventory : MonoBehaviour
     public void AddLevelWin(int amount)
     {
         winObjects += amount;
+        Debug.Log ("current win objects collected: " + winObjects);
     }
 
     public void EnemyKIlled(int amount)
     {
-        easyEnemy += amount;
+        Enemy += amount;
     }
 
     public void levelBeat(int amount)

@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
         currentFuel = maxFuel;
 
         shopCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void OnEnable()
@@ -241,6 +242,6 @@ public class PlayerController : MonoBehaviour
 
     public void AddJetpackFuel(int amount)
     {
-        currentFuel += amount;
+        maxFuel += amount;
     }
 }

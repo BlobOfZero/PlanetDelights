@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 5471
+  controlID: 41
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 186
+  controlID: 193
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 75
+  controlID: 134
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -579,22 +579,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations
+    - Assets/OBJ
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 76
   m_LastFolders:
-  - Assets/Animations
+  - Assets/OBJ
   m_LastFoldersGridSize: 76
   m_LastProjectPath: E:\3. Game Production\Spring23-Game3\FinalFinal-PD\PlanetDelights\GalacticBaking
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a6720000
-    m_LastClickedID: 29350
-    m_ExpandedIDs: 000000002a7200002c7200002e72000030720000327200003472000036720000387200003a7200003c7200003e72000040720000427200004472000046720000487200004a720000a6720000ac72000000ca9a3b
+    scrollPos: {x: 0, y: 198}
+    m_SelectedIDs: 52720000
+    m_LastClickedID: 29266
+    m_ExpandedIDs: 00000000387200003a7200003c7200003e72000040720000427200004472000046720000487200004c7200004e720000507200005272000058720000ba720000bc720000107300003e730000b87f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -622,7 +622,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002a7200002c7200002e72000030720000327200003472000036720000387200003a7200003c7200003e72000040720000427200004472000046720000487200004a720000
+    m_ExpandedIDs: 00000000387200003a7200003c7200003e72000040720000427200004472000046720000487200004a7200004c7200004e7200005072000052720000547200005672000058720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -750,9 +750,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 309cffff
-      m_LastClickedID: -25552
-      m_ExpandedIDs: 309cffffbab3ffff02fbffff
+      m_SelectedIDs: 52720000
+      m_LastClickedID: 0
+      m_ExpandedIDs: b2b5ffff02fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1034,9 +1034,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.326538, y: 1.6332015, z: -0.21745753}
+    m_Target: {x: -0.08501962, y: 2.0620296, z: 1.8377957}
     speed: 2
-    m_Value: {x: 7.326538, y: 1.6332015, z: -0.21745753}
+    m_Value: {x: -0.08501962, y: 2.0620296, z: 1.8377957}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1083,13 +1083,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.011480493, y: 0.98750156, z: -0.085527815, w: -0.13231146}
+    m_Target: {x: -0.25352028, y: 0.6362042, z: -0.23354875, w: -0.6903185}
     speed: 2
-    m_Value: {x: -0.011351549, y: 0.98764336, z: -0.08554012, w: -0.1308227}
+    m_Value: {x: -0.25454098, y: 0.63581717, z: -0.23448966, w: -0.68989855}
   m_Size:
-    m_Target: 1.2376132
+    m_Target: 5.9512625
     speed: 2
-    m_Value: 1.2376132
+    m_Value: 5.6949883
   m_Ortho:
     m_Target: 0
     speed: 2

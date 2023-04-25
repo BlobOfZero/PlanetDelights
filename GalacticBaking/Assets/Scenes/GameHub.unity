@@ -4361,6 +4361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EinChair
       objectReference: {fileID: 0}
+    - target: {fileID: 6540561340601787359, guid: 583ed7dfa2ab28f48939573730f9b02e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4beb06c1e71748e4ab19194132a7dec0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583ed7dfa2ab28f48939573730f9b02e, type: 3}
 --- !u!4 &664465893 stripped

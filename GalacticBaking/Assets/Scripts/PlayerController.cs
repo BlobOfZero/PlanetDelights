@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
     // health var
      private int maxHealth = 100;
      public int currentHealth;
-    public TextMeshProUGUI HealthText;
 
     // jetpack var
     public float currentFuel;
@@ -79,7 +78,6 @@ public class PlayerController : MonoBehaviour
 
         currentAmmo = maxAmmo;
         currentHealth = maxHealth;
-        HealthText.text = "Current health; " + currentHealth;
         currentFuel = maxFuel;
 
         shopCanvas.gameObject.SetActive(false);
@@ -164,8 +162,6 @@ public class PlayerController : MonoBehaviour
         loseState = true;
         Destroy(gameObject);
     }
-
-    HealthText.text = "Current health; " + currentHealth;
 
     // pausing the game
     if(pauseAction.triggered)

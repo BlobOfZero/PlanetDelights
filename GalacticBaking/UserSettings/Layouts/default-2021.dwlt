@@ -43,7 +43,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 10}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 193
+  controlID: 189
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 134
+  controlID: 143
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -579,22 +579,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/OBJ
+    - Assets/MATS/Characters
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 76
   m_LastFolders:
-  - Assets/OBJ
+  - Assets/MATS/Characters
   m_LastFoldersGridSize: 76
   m_LastProjectPath: E:\3. Game Production\Spring23-Game3\FinalFinal-PD\PlanetDelights\GalacticBaking
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 198}
-    m_SelectedIDs: 52720000
-    m_LastClickedID: 29266
-    m_ExpandedIDs: 00000000387200003a7200003c7200003e72000040720000427200004472000046720000487200004c7200004e720000507200005272000058720000ba720000bc720000107300003e730000b87f000000ca9a3b
+    scrollPos: {x: 0, y: 70}
+    m_SelectedIDs: d4720000
+    m_LastClickedID: 29396
+    m_ExpandedIDs: 00000000387200003a7200003c7200003e72000040720000427200004472000046720000487200004a7200004c7200004e7200005272000056720000587200005a7200005c72000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -622,7 +622,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000387200003a7200003c7200003e72000040720000427200004472000046720000487200004a7200004c7200004e7200005072000052720000547200005672000058720000
+    m_ExpandedIDs: 00000000387200003a7200003c7200003e72000040720000427200004472000046720000487200004a7200004c7200004e72000050720000527200005472000056720000587200005a7200005c720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -749,10 +749,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 52720000
+      scrollPos: {x: 0, y: 503}
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b2b5ffff02fbffff
+      m_ExpandedIDs: 0eacffff78acffff94b2ffffb4b2ffffcab2ffff04b6ffff02fbffff88730000927600000c770000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -768,7 +768,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 6}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1034,13 +1034,13 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.08501962, y: 2.0620296, z: 1.8377957}
+    m_Target: {x: 13.002601, y: 0.22347522, z: 5.988611}
     speed: 2
-    m_Value: {x: -0.08501962, y: 2.0620296, z: 1.8377957}
+    m_Value: {x: 13.002601, y: 0.22347522, z: 5.988611}
   m_RenderMode: 0
   m_CameraMode:
-    drawMode: 0
-    name: Shaded
+    drawMode: 2
+    name: Shaded Wireframe
     section: Shading Mode
   m_ValidateTrueMetals: 0
   m_DoValidateTrueMetals: 0
@@ -1083,13 +1083,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.25352028, y: 0.6362042, z: -0.23354875, w: -0.6903185}
+    m_Target: {x: 0.10489144, y: 0.68729377, z: -0.10138982, w: 0.7116612}
     speed: 2
-    m_Value: {x: -0.25454098, y: 0.63581717, z: -0.23448966, w: -0.68989855}
+    m_Value: {x: 0.103667274, y: 0.68847203, z: -0.100508414, w: 0.7107444}
   m_Size:
-    m_Target: 5.9512625
+    m_Target: 3.216905
     speed: 2
-    m_Value: 5.6949883
+    m_Value: 3.216905
   m_Ortho:
     m_Target: 0
     speed: 2

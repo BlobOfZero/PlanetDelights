@@ -37,19 +37,33 @@ public class AnimStateContr : MonoBehaviour
         }
 
 
-        //Jumpging Animation
+        //Walking Animation
         bool isJumping = animator.GetBool(isJumpingHash);
-        bool spacePressed = (Input.GetKey("z"));
+        bool jumpPressed = (Input.GetKey("r"));
 
-        if (!isJumping && spacePressed)
+        if (!isJumping && jumpPressed)
         {
             animator.SetBool("isJumping", true);
         }
 
-        if (isJumping && !spacePressed)
+        if (isJumping && !jumpPressed)
         {
             animator.SetBool(isJumpingHash, false);
         }
+        
+        //Jumpging Animation
+         //bool isJumping = animator.GetBool(isJumpingHash);
+         //bool jumpPressed = (Input.GetKey("r"));
+
+        //if (!isJumping && jumpPressed)
+        //{
+        //animator.SetBool("isJumping", true);
+        //}
+
+        //if (isJumping && !jumpPressed)
+        //{
+        //    animator.SetBool(isJumpingHash, false);
+        //}
 
 
         //Jetpack Animation

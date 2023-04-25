@@ -7,7 +7,9 @@ public class AnimStateContr : MonoBehaviour
     Animator animator;
     int isWalkingHash;
     int isJumpingHash;
-    //int isJetpackRHash;
+    int isJetpackHash;
+    int turnLeftWalkHash;
+    int turnRightWalkHash;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,9 @@ public class AnimStateContr : MonoBehaviour
         animator = GetComponent<Animator>();
         isWalkingHash = Animator.StringToHash("isWalking");
         isJumpingHash = Animator.StringToHash("isJumping");
-        //isJetpackHash = Animator.StringToHash("isJetpack");
+        isJetpackHash = Animator.StringToHash("isJetpack");
+        turnLeftWalkHash = Animator.StringToHash("turnLeftWalk");
+        turnRightWalkHash = Animator.StringToHash("turnRightWalk");
 
     }
 
@@ -28,18 +32,18 @@ public class AnimStateContr : MonoBehaviour
 
         if (!isWalking && forwardPressed)
         {
-            animator.SetBool("isWalking", true);
+           animator.SetBool("isWalking", true);
         }
 
         if (isWalking && !forwardPressed)
-        {
-            animator.SetBool(isWalkingHash, false);
-        }
+            {
+                animator.SetBool(isWalkingHash, false);
+            }
 
 
-        //Walking Animation
+        //Jumping Animation
         bool isJumping = animator.GetBool(isJumpingHash);
-        bool jumpPressed = (Input.GetKey("r"));
+        bool jumpPressed = (Input.GetKey("space"));
 
         if (!isJumping && jumpPressed)
         {
@@ -50,35 +54,21 @@ public class AnimStateContr : MonoBehaviour
         {
             animator.SetBool(isJumpingHash, false);
         }
-        
-        //Jumpging Animation
-         //bool isJumping = animator.GetBool(isJumpingHash);
-         //bool jumpPressed = (Input.GetKey("r"));
-
-        //if (!isJumping && jumpPressed)
-        //{
-        //animator.SetBool("isJumping", true);
-        //}
-
-        //if (isJumping && !jumpPressed)
-        //{
-        //    animator.SetBool(isJumpingHash, false);
-        //}
-
-
+    
         //Jetpack Animation
-       // bool isJetpack = animator.GetBool(isJetpackHash);
-        //bool jetpackPressed = (Input.GetKey("q"));
+        bool isJetpack = animator.GetBool(isJetpackHash);
+        bool jetpackPressed = (Input.GetKey("q"));
 
-        //if (!isJetpack && jetpackPressed)
-        //{
-        //    animator.SetBool("isJetpack", true);
-        //}
+        if (!isJetpack && jetpackPressed)
+        {
+            animator.SetBool("isJetpack", true);
+        }
 
-       // if (isJetpack && !jetpackPressed)
-       // {
-      ///      animator.SetBool(isJumpingHash, false);
-       // }
+        if (isJetpack && !jetpackPressed)
+        {
+            animator.SetBool(isJetpackHash, false);
+        }
+
 
 
     }

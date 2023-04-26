@@ -171,8 +171,28 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 248ab6591992fdb44a144493b32979af, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7622715626660895528, guid: c77a136f33e67a14da49d50512bc4b2a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c77a136f33e67a14da49d50512bc4b2a, type: 3}
+--- !u!1 &3479503103559234962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4818093063691646647, guid: c77a136f33e67a14da49d50512bc4b2a, type: 3}
+  m_PrefabInstance: {fileID: 8256474422170960677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8811194976033674617
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479503103559234962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8236295510042054766, guid: 8e0923525e442a24b9bb294e62a7afb3, type: 3}
 --- !u!4 &4252098504391143208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5302600097252338701, guid: c77a136f33e67a14da49d50512bc4b2a, type: 3}
@@ -185,6 +205,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3531149080736721581}
     m_Modifications:
+    - target: {fileID: 1711272333960091895, guid: 36dbad11359c1154d9d84bf0f6931b84, type: 3}
+      propertyPath: m_Height
+      value: 1.4052831
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711272333960091895, guid: 36dbad11359c1154d9d84bf0f6931b84, type: 3}
+      propertyPath: m_Center.x
+      value: -0.13517211
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711272333960091895, guid: 36dbad11359c1154d9d84bf0f6931b84, type: 3}
+      propertyPath: m_Center.y
+      value: -0.02243362
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711272333960091895, guid: 36dbad11359c1154d9d84bf0f6931b84, type: 3}
+      propertyPath: m_Center.z
+      value: -0.092894554
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711272333960091895, guid: 36dbad11359c1154d9d84bf0f6931b84, type: 3}
+      propertyPath: m_Direction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2858457597489878205, guid: 36dbad11359c1154d9d84bf0f6931b84, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

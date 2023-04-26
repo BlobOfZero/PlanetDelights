@@ -38,14 +38,14 @@ public class PlayerController : MonoBehaviour
     public int currentAmmo;
 
     // health var
-     private int maxHealth = 100;
-     public int currentHealth;
+    private int maxHealth = 100;
+    public int currentHealth;
     public TextMeshProUGUI HealthText;
 
     // jetpack var
     public float currentFuel;
     private float maxFuel = 10f;
-     Rigidbody rigid;
+    Rigidbody rigid;
 
     // shop vars
     public Canvas shopCanvas;
@@ -100,22 +100,22 @@ public class PlayerController : MonoBehaviour
     {
         // shooting gun functionality
 
-        if(iisPaused == false && currentAmmo > 0 && shopOpen == false)
+        if (iisPaused == false && currentAmmo > 0 && shopOpen == false)
         {
-        currentAmmo --; 
-        RaycastHit hit;
-        GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
-        {
-            bulletController.target = hit.point;
-            bulletController.hit = true;
-        }
-        else
-        {
-            bulletController.target = cameraTransform.position + cameraTransform.forward *bulletHitMissDistance;
-            bulletController.hit = false;
-        }
+            currentAmmo--;
+            RaycastHit hit;
+            GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
+            {
+                bulletController.target = hit.point;
+                bulletController.hit = true;
+            }
+            else
+            {
+                bulletController.target = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance;
+                bulletController.hit = false;
+            }
         }
         else
         {
@@ -139,9 +139,9 @@ public class PlayerController : MonoBehaviour
 
         // jumping
         MovementJump();
-        
+
         // Jetpack hover input gravity
-        if(Input.GetKey(KeyCode.Q) && currentFuel > 1)
+        if (Input.GetKey(KeyCode.Q) && currentFuel > 1)
         {
             playerVelocity.y = 1.1f;
             currentFuel -= Time.deltaTime;
@@ -149,31 +149,31 @@ public class PlayerController : MonoBehaviour
         }
 
         // recharge feul
-        if(currentFuel < maxFuel && controller.isGrounded)
+        if (currentFuel < maxFuel && controller.isGrounded)
         {
             currentFuel += Time.deltaTime;
         }
 
         // Rotating the player object
-    Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
-    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-         // killing the player
-    if(currentHealth <= 0)
-    {
-        loseState = true;
-        Destroy(gameObject);
-    }
+        // killing the player
+        if (currentHealth <= 0)
+        {
+            loseState = true;
+            Destroy(gameObject);
+        }
 
-    HealthText.text = "Current health; " + currentHealth;
+        HealthText.text = "Current health; " + currentHealth;
 
-    // pausing the game
-    if(pauseAction.triggered)
-    {
-        gameManager.GetComponent<PauseMenu>().PauseGame();
-        iisPaused = true;
-        Time.timeScale = 0;
-    }
+        // pausing the game
+        if (pauseAction.triggered)
+        {
+            gameManager.GetComponent<PauseMenu>().PauseGame();
+            iisPaused = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void PlayerTakeDamage(int damage)
@@ -186,13 +186,13 @@ public class PlayerController : MonoBehaviour
         groundedPlayer = controller.isGrounded;
 
         // if on ground stop vertical movement
-        if(groundedPlayer)
+        if (groundedPlayer)
         {
             playerVelocity.y = 0.0f;
         }
 
         // if on ground and jump pressed jump player
-        if(jumpPressed && groundedPlayer)
+        if (jumpPressed && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -1.0f * gravityValue);
             jumpPressed = false;
@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Jump pressed");
 
         // check if no vertical movement
-        if(controller.velocity.y == 0)
+        if (controller.velocity.y == 0)
         {
             jumpPressed = true;
         }
@@ -235,7 +235,7 @@ public class PlayerController : MonoBehaviour
         currentAmmo += amount;
     }
 
-        public void AddHealth(int amount)
+    public void AddHealth(int amount)
     {
         currentHealth += amount;
     }

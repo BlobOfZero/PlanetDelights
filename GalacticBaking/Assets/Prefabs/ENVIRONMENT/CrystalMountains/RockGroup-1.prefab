@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3177246594454779427}
   - component: {fileID: 3177246594454779424}
   - component: {fileID: 3177246594454779425}
-  - component: {fileID: 3177246594454779438}
   - component: {fileID: 3177246594454779439}
   m_Layer: 0
   m_Name: Boulder3-V1 (1)
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3177246594454779438
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1232968744159037599, guid: 4265eb6c42994994099129fb9272a0d8, type: 3}
-  m_PrefabInstance: {fileID: 964165939184445436}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3177246594454779436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3545196, y: 1.4990501, z: 1.5696948}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &3177246594454779439
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -123,8 +109,7 @@ GameObject:
   - component: {fileID: 3177246594952146618}
   - component: {fileID: 3177246594952146619}
   - component: {fileID: 3177246594952146616}
-  - component: {fileID: 3177246594952146617}
-  - component: {fileID: 3177246594952146598}
+  - component: {fileID: 3666935777472157840}
   m_Layer: 0
   m_Name: Boulder3-V3
   m_TagString: Untagged
@@ -197,33 +182,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3177246594952146617
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 5280103844087370356, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
-  m_PrefabInstance: {fileID: 2154422329042346931}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3177246594952146599}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3545196, y: 1.4990501, z: 1.5696948}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &3177246594952146598
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 7967930753651801367, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
-  m_PrefabInstance: {fileID: 2154422329042346931}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3177246594952146599}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.6919539
-  m_Height: 1.614562
-  m_Direction: 1
-  m_Center: {x: -0.04122043, y: -0.022433639, z: -0.09289467}
 --- !u!1 &3177246595282617179
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +193,6 @@ GameObject:
   - component: {fileID: 3177246595282617182}
   - component: {fileID: 3177246595282617183}
   - component: {fileID: 3177246595282617180}
-  - component: {fileID: 3177246595282617181}
   - component: {fileID: 3177246595282617178}
   m_Layer: 0
   m_Name: Boulder3-V2 (4)
@@ -309,19 +266,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3177246595282617181
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 5499464064702812429, guid: 962b2f53ff7eec74db58a5ebb6ded783, type: 3}
-  m_PrefabInstance: {fileID: 4233350326804578102}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3177246595282617179}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3545196, y: 1.4990501, z: 1.5696948}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &3177246595282617178
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -425,7 +369,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder3-V1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4265eb6c42994994099129fb9272a0d8, type: 3}
 --- !u!1001 &2154422329042346931
 PrefabInstance:
@@ -482,8 +427,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 76.323
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7967930753651801367, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
+      propertyPath: m_Radius
+      value: 0.53991085
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967930753651801367, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
+      propertyPath: m_Center.x
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967930753651801367, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
+      propertyPath: m_Center.y
+      value: -0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967930753651801367, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
+      propertyPath: m_Center.z
+      value: -0.092894614
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967930753651801367, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
+      propertyPath: m_Direction
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 53cadf941dbbd5c4a9fe88162737d3c4, type: 3}
+--- !u!64 &3666935777472157840
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177246594952146599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8236295510042054766, guid: 8e0923525e442a24b9bb294e62a7afb3, type: 3}
 --- !u!1001 &4233350326804578102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -539,5 +519,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -102.716
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 962b2f53ff7eec74db58a5ebb6ded783, type: 3}

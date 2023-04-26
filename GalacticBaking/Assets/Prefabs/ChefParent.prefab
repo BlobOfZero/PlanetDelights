@@ -64,7 +64,7 @@ Transform:
   - {fileID: 6768955947674310362}
   - {fileID: 1988475517}
   m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6768955947560075830
 GameObject:
@@ -92,8 +92,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6768955947560075830}
-  m_LocalRotation: {x: -0.005235964, y: -0, z: -0, w: 0.9999863}
-  m_LocalPosition: {x: 135.76753, y: -52.82929, z: -13.042439}
+  m_LocalRotation: {x: -0.005236233, y: -0, z: -0, w: 0.9999863}
+  m_LocalPosition: {x: 136.0133, y: -52.82929, z: -13.042439}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6768955947674310360}
   m_LocalRotation: {x: -0.005236233, y: -0, z: -0, w: 0.9999863}
-  m_LocalPosition: {x: 135.53082, y: -52.70736, z: -12.243672}
+  m_LocalPosition: {x: 135.72198, y: -52.70736, z: -12.243672}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecenterTarget: 2
   m_VerticalAxis:
-    Value: -0.6
+    Value: -0.60003084
     m_SpeedMode: 1
     m_MaxSpeed: 0.03
     m_AccelTime: 0.2
@@ -1015,14 +1015,13 @@ MonoBehaviour:
   playerObjTransform: {fileID: 6928818648434854144}
   currentAmmo: 0
   currentHealth: 0
-  HealthText: {fileID: 0}
   currentFuel: 0
   shopCanvas: {fileID: 0}
   gameManager: {fileID: 0}
   iisPaused: 0
   isDead: 0
   loseState: 0
-  gunFireSound: {fileID: 8300000, guid: 5a41da69866952d42abf95f04a26b18b, type: 3}
+  shootGunAudio: {fileID: 8300000, guid: 5a41da69866952d42abf95f04a26b18b, type: 3}
 --- !u!143 &6928818648434854158
 CharacterController:
   m_ObjectHideFlags: 0

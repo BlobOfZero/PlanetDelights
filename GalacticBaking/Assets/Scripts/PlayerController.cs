@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bulletHitMissDistance = 25f;
     private CharacterController controller;
     private PlayerInput playerInput;
+    private AudioSource playerAudio;
     [SerializeField] private Transform playerObjTransform;
 
     private Transform cameraTransform;
@@ -40,11 +41,12 @@ public class PlayerController : MonoBehaviour
     // health var
      private int maxHealth = 100;
      public int currentHealth;
+     public HealthBar healthbarUI;
 
     // jetpack var
     public float currentFuel;
     private float maxFuel = 10f;
-     Rigidbody rigid;
+    public FuelBar fuelBarUI;
 
     // shop vars
     public Canvas shopCanvas;
@@ -59,13 +61,14 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
     public bool loseState = false;
 
-    // Sound effects
-    public AudioClip gunFireSound;
+    // audio
+    public AudioClip shootGunAudio;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        playerAudio = GetComponent<AudioSource>();
         cameraTransform = Camera.main.transform;
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
@@ -78,7 +81,9 @@ public class PlayerController : MonoBehaviour
 
         currentAmmo = maxAmmo;
         currentHealth = maxHealth;
+        healthbarUI.SetMaxHealth(maxHealth);
         currentFuel = maxFuel;
+        fuelBarUI.SetMaxFuel(maxFuel);
 
         shopCanvas.gameObject.SetActive(false);
         Time.timeScale = 1;
@@ -104,6 +109,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
         BulletController bulletController = bullet.GetComponent<BulletController>();
+        playerAudio.PlayOneShot(shootGunAudio);
         if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
         {
             bulletController.target = hit.point;
@@ -123,7 +129,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         // ground movement
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
@@ -143,14 +148,16 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y = 1.1f;
             currentFuel -= Time.deltaTime;
-            Debug.Log("Fly function triggered");
         }
 
-        // recharge feul
+        // recharge fuel
         if(currentFuel < maxFuel && controller.isGrounded)
         {
             currentFuel += Time.deltaTime;
         }
+
+        // Fuel UI Update
+        fuelBarUI.SetFuel(currentFuel);
 
         // Rotating the player object
     Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
@@ -175,6 +182,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerTakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthbarUI.SetHealth(currentHealth);
     }
 
     private void MovementJump()

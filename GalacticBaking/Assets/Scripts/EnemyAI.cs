@@ -97,7 +97,7 @@ public class EnemyAI : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player hit");
-            controller.PlayerTakeDamage(20);
+            controller.PlayerTakeDamage(10);
         }
     }
 

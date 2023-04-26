@@ -5,7 +5,6 @@ public class PlayerInventory : MonoBehaviour
 {
     public TextMeshProUGUI killsText;
     public TextMeshProUGUI ammoText;
-    public TextMeshProUGUI fuelText;
     public GameObject winPanel, losePanel;
 
     public int killCoins;
@@ -25,7 +24,6 @@ public class PlayerInventory : MonoBehaviour
         killsText.text = "" + killCoins;
         killCoins = 0;
         ammoText.text = "" + controller.currentAmmo;
-        fuelText.text = "" + controller.currentFuel;
         winPanel.gameObject.SetActive(false);
         losePanel.gameObject.SetActive(false);
     }
@@ -35,7 +33,6 @@ public class PlayerInventory : MonoBehaviour
     {
         killsText.text = "" + killCoins;
         ammoText.text = "" + controller.currentAmmo;
-        fuelText.text = "" + controller.currentFuel;
 
         if(controller.loseState == true)
         {

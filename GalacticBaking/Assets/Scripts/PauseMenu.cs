@@ -28,6 +28,14 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        pauseMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+    }
+
+    public void ReturnHub()
+    {
      SceneManager.LoadScene("GameHub");   
     }
 

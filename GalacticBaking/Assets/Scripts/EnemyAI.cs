@@ -29,9 +29,9 @@ public class EnemyAI : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
 
     // Animations
-    public bool inPursuit = false;
-    Animator animator;
-    int isChasingHash;
+    //public bool inPursuit = false;
+    //Animator animator;
+    //int isChasingHash;
 
     void Awake()
     {
@@ -49,8 +49,8 @@ public class EnemyAI : MonoBehaviour
         currentHealth = maxHealth;
 
         //Animatons
-        animator = GetComponent<Animator>();
-        isChasingHash = Animator.StringToHash("isChasing");
+        //animator = GetComponent<Animator>();
+        //isChasingHash = Animator.StringToHash("isChasing");
     }
 
     public void Update()
@@ -68,22 +68,22 @@ public class EnemyAI : MonoBehaviour
         if(playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
-            inPursuit = true;
+            //inPursuit = true;
         }
 
 
         //animations
-        if (inPursuit == true)
-        {
+        //if (inPursuit == true)
+        //{
             //Debug.Log("Chicken Run");
-            animator.SetBool("isChasing", true);
-        }
+        //    animator.SetBool("isChasing", true);
+        //}
 
-        if (inPursuit == false)
-        {
-            animator.SetBool(isChasingHash, false);
+        //if (inPursuit == false)
+        //{
+        //    animator.SetBool(isChasingHash, false);
 
-        }
+        //}
 
     }
 

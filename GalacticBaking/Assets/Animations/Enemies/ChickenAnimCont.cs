@@ -4,44 +4,44 @@ using UnityEngine;
 
 public class ChickenAnimCont : MonoBehaviour
 {
-    Animator animator;
+    //Animator animator;
 
-    EnemyAI enemyAI;
+    //EnemyAI enemyAI;
 
-    int isChasingHash;
+    //int isChasingHash;
 
     private void Awake()
     {
         //GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyAI.GetComponent<EnemyAI>();
+        //enemyAI.GetComponent<EnemyAI>();
         //enemyAI = enemy.GetComponent<EnemyAI>();
     }
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        isChasingHash = Animator.StringToHash("isChasing");
+        //animator = GetComponent<Animator>();
+        //isChasingHash = Animator.StringToHash("isChasing");
     }
 
     // Update is called once per frame
     void Update()
     {
         //Walking Animation
-        bool isChasing = animator.GetBool(isChasingHash);
+        //bool isChasing = animator.GetBool(isChasingHash);
 
 
-        Debug.Log(enemyAI.inPursuit);
+        //Debug.Log(enemyAI.inPursuit);
 
 
-        if (enemyAI.inPursuit == true)
-        {
+        //if (enemyAI.inPursuit == true)
+        //{
         //    Debug.Log();
-            animator.SetBool("isChasing", true);
-        }
+        //    animator.SetBool("isChasing", true);
+        //}
 
-        if (enemyAI.inPursuit == false)
-        {
-            animator.SetBool(isChasingHash, false);
-        }
+        //if (enemyAI.inPursuit == false)
+        //{
+       //     animator.SetBool(isChasingHash, false);
+        //}
     }
 }

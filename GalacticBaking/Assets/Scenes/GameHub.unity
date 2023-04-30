@@ -5374,21 +5374,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUDCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8581214481264119653, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 274945000520131037, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8581214481264119653, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581214481264119653, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8581214481272800174, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8581214481272800174, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

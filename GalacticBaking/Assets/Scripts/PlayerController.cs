@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 [RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
@@ -21,7 +22,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bulletHitMissDistance = 25f;
     private CharacterController controller;
     private PlayerInput playerInput;
-    private AudioSource playerAudio;
     [SerializeField] private Transform playerObjTransform;
 
     private Transform cameraTransform;
@@ -38,14 +38,14 @@ public class PlayerController : MonoBehaviour
     public int currentAmmo;
 
     // health var
-     private int maxHealth = 100;
-     public int currentHealth;
-     public HealthBar healthbarUI;
+    private int maxHealth = 100;
+    public int currentHealth;
+    public TextMeshProUGUI HealthText;
 
     // jetpack var
     public float currentFuel;
     private float maxFuel = 10f;
-    public FuelBar fuelBarUI;
+    Rigidbody rigid;
 
     // shop vars
     public Canvas shopCanvas;
@@ -60,16 +60,13 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
     public bool loseState = false;
 
-    // audio
-    public AudioClip shootGunAudio;
-
-    PlayerInventory inventory;
+    // Sound effects
+    public AudioClip gunFireSound;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
-        playerAudio = GetComponent<AudioSource>();
         cameraTransform = Camera.main.transform;
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
@@ -82,15 +79,11 @@ public class PlayerController : MonoBehaviour
 
         currentAmmo = maxAmmo;
         currentHealth = maxHealth;
-        healthbarUI.SetMaxHealth(maxHealth);
+        HealthText.text = "Current health; " + currentHealth;
         currentFuel = maxFuel;
-        fuelBarUI.SetMaxFuel(maxFuel);
 
         shopCanvas.gameObject.SetActive(false);
         Time.timeScale = 1;
-
-        GameObject gameManager = GameObject.Find("GameManager");
-        inventory = gameManager.GetComponent<PlayerInventory>();
     }
 
     private void OnEnable()
@@ -106,23 +99,23 @@ public class PlayerController : MonoBehaviour
     private void ShootGun(InputAction.CallbackContext ctx)
     {
         // shooting gun functionality
-        if(iisPaused == false && currentAmmo > 0 && shopOpen == false)
+
+        if (iisPaused == false && currentAmmo > 0 && shopOpen == false)
         {
-        currentAmmo --; 
-        RaycastHit hit;
-        GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        GunAudio();
-        if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
-        {
-            bulletController.target = hit.point;
-            bulletController.hit = true;
-        }
-        else
-        {
-            bulletController.target = cameraTransform.position + cameraTransform.forward *bulletHitMissDistance;
-            bulletController.hit = false;
-        }
+            currentAmmo--;
+            RaycastHit hit;
+            GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
+            {
+                bulletController.target = hit.point;
+                bulletController.hit = true;
+            }
+            else
+            {
+                bulletController.target = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance;
+                bulletController.hit = false;
+            }
         }
         else
         {
@@ -132,6 +125,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         // ground movement
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
@@ -145,47 +139,46 @@ public class PlayerController : MonoBehaviour
 
         // jumping
         MovementJump();
-        
+
         // Jetpack hover input gravity
-        if(Input.GetKey(KeyCode.Q) && currentFuel > 1)
+        if (Input.GetKey(KeyCode.Q) && currentFuel > 1)
         {
             playerVelocity.y = 1.1f;
             currentFuel -= Time.deltaTime;
+            Debug.Log("Fly function triggered");
         }
 
-        // recharge fuel
-        if(currentFuel < maxFuel && controller.isGrounded)
+        // recharge feul
+        if (currentFuel < maxFuel && controller.isGrounded)
         {
             currentFuel += Time.deltaTime;
         }
 
-        // Fuel UI Update
-        fuelBarUI.SetFuel(currentFuel);
-
         // Rotating the player object
-    Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
-    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-         // killing the player
-    if(currentHealth <= 0)
-    {
-        loseState = true;
-        Destroy(gameObject);
-    }
+        // killing the player
+        if (currentHealth <= 0)
+        {
+            loseState = true;
+            Destroy(gameObject);
+        }
 
-    // pausing the game
-    if(pauseAction.triggered)
-    {
-        gameManager.GetComponent<PauseMenu>().PauseGame();
-        iisPaused = true;
-        Time.timeScale = 0;
-    }
+        HealthText.text = "Current health; " + currentHealth;
+
+        // pausing the game
+        if (pauseAction.triggered)
+        {
+            gameManager.GetComponent<PauseMenu>().PauseGame();
+            iisPaused = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void PlayerTakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthbarUI.SetHealth(currentHealth);
     }
 
     private void MovementJump()
@@ -193,13 +186,13 @@ public class PlayerController : MonoBehaviour
         groundedPlayer = controller.isGrounded;
 
         // if on ground stop vertical movement
-        if(groundedPlayer)
+        if (groundedPlayer)
         {
             playerVelocity.y = 0.0f;
         }
 
         // if on ground and jump pressed jump player
-        if(jumpPressed && groundedPlayer)
+        if (jumpPressed && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -1.0f * gravityValue);
             jumpPressed = false;
@@ -214,15 +207,10 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Jump pressed");
 
         // check if no vertical movement
-        if(controller.velocity.y == 0)
+        if (controller.velocity.y == 0)
         {
             jumpPressed = true;
         }
-    }
-
-    private void GunAudio()
-    {
-        playerAudio.PlayOneShot(shootGunAudio, 0.8f);
     }
 
     // shop functions
@@ -244,14 +232,10 @@ public class PlayerController : MonoBehaviour
 
     public void AddAmmo(int amount)
     {
-        if(inventory.killCoins < 5)
-        {
         currentAmmo += amount;
-        }
-
     }
 
-        public void AddHealth(int amount)
+    public void AddHealth(int amount)
     {
         currentHealth += amount;
     }

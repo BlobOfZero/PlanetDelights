@@ -28,6 +28,11 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    // Animations
+    //public bool inPursuit = false;
+    //Animator animator;
+    //int isChasingHash;
+
     void Awake()
     {
         GameObject gameManager = GameObject.Find("GameManager");
@@ -42,10 +47,16 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
+        //Animatons
+        //animator = GetComponent<Animator>();
+        //isChasingHash = Animator.StringToHash("isChasing");
     }
 
-    private void Update()
+    public void Update()
     {
+        //Debug.Log(inPursuit);
+
         // Check for sight
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
@@ -57,7 +68,23 @@ public class EnemyAI : MonoBehaviour
         if(playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
+            //inPursuit = true;
         }
+
+
+        //animations
+        //if (inPursuit == true)
+        //{
+            //Debug.Log("Chicken Run");
+        //    animator.SetBool("isChasing", true);
+        //}
+
+        //if (inPursuit == false)
+        //{
+        //    animator.SetBool(isChasingHash, false);
+
+        //}
+
     }
 
         private void Patrol()
@@ -86,7 +113,7 @@ public class EnemyAI : MonoBehaviour
         walkPointSet = true;
     }
 
-    private void ChasePlayer()
+    public void ChasePlayer()
     {
         agent.SetDestination(playerTransform.position);
         transform.LookAt(playerTransform);

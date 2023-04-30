@@ -14,4 +14,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("GameHub");
     }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

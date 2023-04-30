@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.52386564, g: 0.56170434, b: 0.47704506, a: 1}
+  m_IndirectSpecularColor: {r: 0.5229886, g: 0.5607002, b: 0.4770044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5229,7 +5229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947560075828, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.126859
+      value: -8.208591
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947560075828, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5241,7 +5241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947674310362, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.436446
+      value: -8.500015
       objectReference: {fileID: 0}
     - target: {fileID: 6768955947674310362, guid: 586676384cffe3a468095cc407ed8109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7536,7 +7536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.005236233, y: 0, z: 0, w: 0.9999863}
-  m_LocalPosition: {x: -8.969273, y: 1.4714347, z: -5.0190487}
+  m_LocalPosition: {x: -9.051005, y: 1.4714347, z: -5.0190487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9153,6 +9153,7 @@ MonoBehaviour:
   ammoText: {fileID: 1847978477}
   winPanel: {fileID: 436850558}
   losePanel: {fileID: 329755894}
+  gameWin: {fileID: 1256602527}
   killCoins: 0
   Enemy: 0
 --- !u!4 &1228063895
@@ -9856,6 +9857,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fe5c7b0ca0f7948a7c05d397dfd932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1256602527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1686967546650325639, guid: 6852cfa28b7eef54089b151a5baa85e6, type: 3}
+  m_PrefabInstance: {fileID: 1256602524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1276120800
 PrefabInstance:
   m_ObjectHideFlags: 0

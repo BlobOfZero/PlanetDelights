@@ -5,7 +5,7 @@ public class PlayerInventory : MonoBehaviour
 {
     public TextMeshProUGUI killsText;
     public TextMeshProUGUI ammoText;
-    public GameObject winPanel, losePanel;
+    public GameObject winPanel, losePanel, gameWin;
 
     public int killCoins;
 
@@ -26,6 +26,7 @@ public class PlayerInventory : MonoBehaviour
         ammoText.text = "" + controller.currentAmmo;
         winPanel.gameObject.SetActive(false);
         losePanel.gameObject.SetActive(false);
+        gameWin.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class PlayerInventory : MonoBehaviour
         
         if(winObjects == 3)
         {
-            winPanel.gameObject.SetActive(true);
+            gameWin.gameObject.SetActive(true);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

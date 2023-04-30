@@ -12,7 +12,7 @@ public class PlayerInventory : MonoBehaviour
     private PlayerController controller;
     private BulletController bulletController;
 
-    public int winObjects;
+    public static int winObjects;
 
     public int Enemy;
 
@@ -58,7 +58,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void SubtractCoinsAmmo(int amount)
     {
-        if(killCoins > 0)
+        if(killCoins > 5)
         {
            killCoins -= 5;
            controller.AddAmmo(5);
@@ -71,7 +71,7 @@ public class PlayerInventory : MonoBehaviour
 
        public void SubtractCoinsHealth(int amount)
     {
-        if(killCoins > 0)
+        if(killCoins > 5)
         {
            killCoins -= 5;
            controller.AddHealth(5);
@@ -84,9 +84,9 @@ public class PlayerInventory : MonoBehaviour
 
     public void SubtractJetFuel(int amount)
     {
-        if(killCoins > 0)
+        if(killCoins > 20)
         {
-           killCoins -= 5;
+           killCoins -= 20;
            controller.AddJetpackFuel(5);
         }
         else
@@ -97,9 +97,9 @@ public class PlayerInventory : MonoBehaviour
 
     public void SubtractWeaponUpgrade1(int amount)
     {
-        if(killCoins >= 10)
+        if(killCoins >= 25)
         {
-           killCoins -= 10;
+           killCoins -= 25;
         }
         else
         {
@@ -110,6 +110,9 @@ public class PlayerInventory : MonoBehaviour
     public void AddLevelWin(int amount)
     {
         winObjects += amount;
+        winPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Debug.Log ("current win objects collected: " + winObjects);
     }
 
@@ -118,7 +121,7 @@ public class PlayerInventory : MonoBehaviour
         Enemy += amount;
     }
 
-    public void levelBeat(int amount)
+    public void GameWin(int amount)
     {
         if(winObjects >= 3)
         {

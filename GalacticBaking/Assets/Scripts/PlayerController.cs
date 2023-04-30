@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 
 [RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
@@ -64,6 +63,8 @@ public class PlayerController : MonoBehaviour
     // audio
     public AudioClip shootGunAudio;
 
+    PlayerInventory inventory;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -87,6 +88,9 @@ public class PlayerController : MonoBehaviour
 
         shopCanvas.gameObject.SetActive(false);
         Time.timeScale = 1;
+
+        GameObject gameManager = GameObject.Find("GameManager");
+        inventory = gameManager.GetComponent<PlayerInventory>();
     }
 
     private void OnEnable()
@@ -102,14 +106,13 @@ public class PlayerController : MonoBehaviour
     private void ShootGun(InputAction.CallbackContext ctx)
     {
         // shooting gun functionality
-
         if(iisPaused == false && currentAmmo > 0 && shopOpen == false)
         {
         currentAmmo --; 
         RaycastHit hit;
         GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
         BulletController bulletController = bullet.GetComponent<BulletController>();
-        playerAudio.PlayOneShot(shootGunAudio);
+        GunAudio();
         if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
         {
             bulletController.target = hit.point;
@@ -217,6 +220,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void GunAudio()
+    {
+        playerAudio.PlayOneShot(shootGunAudio, 0.8f);
+    }
+
     // shop functions
     public void OpenShop()
     {
@@ -236,7 +244,11 @@ public class PlayerController : MonoBehaviour
 
     public void AddAmmo(int amount)
     {
+        if(inventory.killCoins < 5)
+        {
         currentAmmo += amount;
+        }
+
     }
 
         public void AddHealth(int amount)

@@ -554,9 +554,10 @@ GameObject:
   - component: {fileID: 7786021812805950411}
   - component: {fileID: 6468792950536054325}
   - component: {fileID: 4862063635090227981}
+  - component: {fileID: 1577015387931469559}
   m_Layer: 0
   m_Name: Aquatic_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,7 +582,7 @@ Transform:
   - {fileID: 6138860071867963070}
   - {fileID: 3071871220109554890}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6468792950536054325
 MonoBehaviour:
@@ -597,7 +598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
-  player: {fileID: 0}
   agent: {fileID: 4862063635090227981}
   playerTransform: {fileID: 0}
   whatIsGround:
@@ -635,6 +635,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1577015387931469559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441724746897391985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.48378, y: 4.263312, z: 5.359688}
+  m_Center: {x: -0.06430817, y: 1.6316559, z: -0.061660767}
 --- !u!1 &7498978828757284517
 GameObject:
   m_ObjectHideFlags: 0

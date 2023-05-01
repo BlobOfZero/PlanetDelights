@@ -244,20 +244,16 @@ public class PlayerController : MonoBehaviour
 
     public void AddAmmo(int amount)
     {
-        if(inventory.killCoins < 5)
-        {
         currentAmmo += amount;
-        }
-
     }
 
         public void AddHealth(int amount)
     {
-        currentHealth += amount;
+        currentHealth += amount;   
     }
 
     public void AddJetpackFuel(int amount)
     {
-        maxFuel += amount;
+      maxFuel += amount;    
     }
 }

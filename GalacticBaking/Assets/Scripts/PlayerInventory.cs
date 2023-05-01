@@ -5,7 +5,7 @@ public class PlayerInventory : MonoBehaviour
 {
     public TextMeshProUGUI killsText;
     public TextMeshProUGUI ammoText;
-    public GameObject winPanel, losePanel, gameWin;
+    public GameObject LevelWinPanel, losePanel, gameWin;
 
     public int killCoins;
 
@@ -16,6 +16,10 @@ public class PlayerInventory : MonoBehaviour
 
     public int Enemy;
 
+    public static bool eggCollected;
+    public static bool mushroomCollected;
+    public static bool fishCollected;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,7 @@ public class PlayerInventory : MonoBehaviour
         killsText.text = "" + killCoins;
         killCoins = 0;
         ammoText.text = "" + controller.currentAmmo;
-        winPanel.gameObject.SetActive(false);
+        LevelWinPanel.gameObject.SetActive(false);
         losePanel.gameObject.SetActive(false);
         gameWin.gameObject.SetActive(false);
     }
@@ -43,7 +47,7 @@ public class PlayerInventory : MonoBehaviour
             Cursor.visible = true;
         }
         
-        if(winObjects == 3)
+        if(fishCollected == true && eggCollected == true && mushroomCollected == true)
         {
             gameWin.gameObject.SetActive(true);
             Time.timeScale = 0;
@@ -108,25 +112,38 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void AddLevelWin(int amount)
+    public void AddEgg()
     {
-        winObjects += amount;
-        winPanel.SetActive(true);
+        eggCollected = true;
+        LevelWinPanel.SetActive(true);
+        Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Debug.Log ("current win objects collected: " + winObjects);
+        Debug.Log("egg collected");
+    }
+
+    public void AddMushroom()
+    {
+        mushroomCollected = true;
+        LevelWinPanel.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Debug.Log("mushroom collected");
+    }
+
+    public void AddFish()
+    {
+        fishCollected = true;
+        LevelWinPanel.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Debug.Log("fish collected");
     }
 
     public void EnemyKIlled(int amount)
     {
         Enemy += amount;
-    }
-
-    public void GameWin(int amount)
-    {
-        if(winObjects >= 3)
-        {
-            Debug.Log("You win");
-        }
     }
 }

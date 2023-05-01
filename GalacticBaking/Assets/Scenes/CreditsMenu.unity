@@ -294,6 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229904952}
   - component: {fileID: 1229904953}
+  - component: {fileID: 1229904954}
   m_Layer: 0
   m_Name: MenuControl
   m_TagString: Untagged
@@ -340,7 +341,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0.25
+  - 0.1
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -351,6 +352,20 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &1229904954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229904950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992c6a9d82bed0e41a3d3767245cfd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidCanvas: {fileID: 1498266625}
+  video: {fileID: 1229904953}
 --- !u!1 &1498266621
 GameObject:
   m_ObjectHideFlags: 0

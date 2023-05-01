@@ -12,6 +12,8 @@ public class EggWin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject gameManager = GameObject.Find("GameManager");
+        inventory = gameManager.GetComponent<PlayerInventory>();
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class EggWin : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            inventory.AddLevelWin(1);
+            inventory.AddEgg();
         }
     }
 }

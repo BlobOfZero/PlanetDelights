@@ -17,6 +17,6 @@ public class SceneController : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("CreditsMenu");
     }
 }

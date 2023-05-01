@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4870503636191530570}
   - component: {fileID: 5713398285404502755}
   - component: {fileID: 919132147888582263}
-  - component: {fileID: 919132147888582266}
   m_Layer: 0
   m_Name: fish
   m_TagString: Untagged
@@ -34,7 +33,7 @@ Transform:
   - {fileID: 3077683471105383130}
   - {fileID: 6947305025037017476}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 44.642, z: 0}
 --- !u!114 &5713398285404502755
 MonoBehaviour:
@@ -48,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35aebbb113abcdf45bd248d5249ac6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!65 &919132147888582263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61,19 +61,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44235635, y: 0.27782857, z: 0.29608512}
   m_Center: {x: -0.051553026, y: -0.010023445, z: -0.005720782}
---- !u!114 &919132147888582266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5250161339975963888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285b5197488c85048bc3db08f5d74fec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
 --- !u!1 &5984546258293633988
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +72,6 @@ GameObject:
   - component: {fileID: 3077683471105383130}
   - component: {fileID: 7631127330890726907}
   - component: {fileID: 90463478983270312}
-  - component: {fileID: 450699661741829693}
   m_Layer: 0
   m_Name: polySurface121
   m_TagString: Untagged
@@ -158,19 +144,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &450699661741829693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5984546258293633988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285b5197488c85048bc3db08f5d74fec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
 --- !u!1 &6833622553516717066
 GameObject:
   m_ObjectHideFlags: 0

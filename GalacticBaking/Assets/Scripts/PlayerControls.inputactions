@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Grapple",
-                    "type": "Button",
-                    "id": "b1f8e3c9-62d8-439d-b808-da1deac48e47",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Jetpack",
                     "type": "Button",
                     "id": "9b12188e-847d-4474-9ed6-2ff6ca713fa7",
@@ -288,17 +279,6 @@
                 },
                 {
                     "name": "",
-                    "id": "7330b4c0-d175-484d-9bb5-d38256c09b59",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grapple",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2a051a29-44c0-450a-8633-ca52cec4336d",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -323,6 +303,17 @@
                     "name": "",
                     "id": "e9417bb2-28af-46c7-8634-0b28364df39f",
                     "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc148c69-f035-4478-afbb-edb0de981aea",
+                    "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

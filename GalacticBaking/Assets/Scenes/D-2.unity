@@ -5321,7 +5321,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7351,6 +7351,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunGary-Mobile
       objectReference: {fileID: 0}
+    - target: {fileID: 6596463450329755719, guid: 3e00713a94b902b4abcd1303607dae39, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07546460851bfb1439b711d6be0292b0, type: 2}
+    - target: {fileID: 9041870245182641823, guid: 3e00713a94b902b4abcd1303607dae39, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8669f5a5e6f09284fb1dbb658f4e6ea3, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e00713a94b902b4abcd1303607dae39, type: 3}
@@ -7676,7 +7684,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b3264108d9af1424784bf0698f886851, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

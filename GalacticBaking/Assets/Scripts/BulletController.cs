@@ -9,12 +9,15 @@ public class BulletController : MonoBehaviour
     public Vector3 target {get; set; }
     public bool hit {get; set; }
 
-     public bool weaponUpgrade1 = false;
+    PlayerInventory inventory;
 
     private void OnEnable()
     {
         // Once spawned destroy after 3 seconds if nothing is hit
         Destroy(gameObject, timeToDestroy);
+
+        GameObject gameManager = GameObject.Find("GameManager");
+        inventory = gameManager.GetComponent<PlayerInventory>();
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class BulletController : MonoBehaviour
         // if object hit has tag "Enemy" do damage and destroy bullet
         if(collision.collider.tag == "Enemy")
         {
+            
             Debug.Log("Enemy damaged by bullet");
             collision.gameObject.GetComponent<EnemyAI>().EnemyTakeDamage(1);
             Destroy(gameObject);

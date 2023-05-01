@@ -141,6 +141,19 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+        public void UpgradeEnemyTakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            inventory.AddCoins(5);
+            inventory.EnemyKIlled(1);
+            Debug.Log("Enemy Destroyed");
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

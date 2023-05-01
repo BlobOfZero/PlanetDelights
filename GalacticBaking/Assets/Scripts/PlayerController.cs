@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private InputAction shootAction;
     private InputAction jetpackAction;
     private InputAction pauseAction;
+    private InputAction shopAction;
 
     // Ammo var
     private int maxAmmo = 10;
@@ -76,6 +77,7 @@ public class PlayerController : MonoBehaviour
         shootAction = playerInput.actions["Shoot"];
         jetpackAction = playerInput.actions["Jetpack"];
         pauseAction = playerInput.actions["Pause"];
+        shopAction = playerInput.actions["Shop"];
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -171,6 +173,11 @@ public class PlayerController : MonoBehaviour
     {
         loseState = true;
         Destroy(gameObject);
+    }
+
+    if(shopAction.triggered)
+    {
+        OpenShop();
     }
 
     // pausing the game

@@ -19,6 +19,7 @@ public class PlayerInventory : MonoBehaviour
     public static bool eggCollected;
     public static bool mushroomCollected;
     public static bool fishCollected;
+    public static bool upgradeBought;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void SubtractCoinsAmmo(int amount)
     {
-        if(killCoins > 5)
+        if(killCoins >= 5)
         {
            killCoins -= 5;
            controller.AddAmmo(5);
@@ -76,7 +77,7 @@ public class PlayerInventory : MonoBehaviour
 
        public void SubtractCoinsHealth(int amount)
     {
-        if(killCoins > 5)
+        if(killCoins >= 5)
         {
            killCoins -= 5;
            controller.AddHealth(5);
@@ -89,7 +90,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void SubtractJetFuel(int amount)
     {
-        if(killCoins > 20)
+        if(killCoins >= 20)
         {
            killCoins -= 20;
            controller.AddJetpackFuel(5);
@@ -105,11 +106,17 @@ public class PlayerInventory : MonoBehaviour
         if(killCoins >= 25)
         {
            killCoins -= 25;
+           WeaponUpgraded();
         }
         else
         {
             return;
         }
+    }
+
+    public void WeaponUpgraded()
+    {
+        upgradeBought = true;
     }
 
     public void AddEgg()

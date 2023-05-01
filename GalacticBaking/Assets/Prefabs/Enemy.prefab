@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5660319978561495955}
   - component: {fileID: 5660319978561495954}
   - component: {fileID: 5660319978561495953}
-  - component: {fileID: 5660319978561495952}
   - component: {fileID: 5660319978561495956}
   - component: {fileID: 8960719337470791576}
   - component: {fileID: 6715650809533231941}
+  - component: {fileID: 31926616043239025}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -88,20 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5660319978561495952
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5660319978561495919}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5660319978561495956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +117,6 @@ MonoBehaviour:
   attackRange: 12
   playerInSightRange: 0
   playerInAttackRange: 0
-  inPursuit: 0
 --- !u!195 &8960719337470791576
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -156,7 +141,7 @@ NavMeshAgent:
   m_ObstacleAvoidanceType: 4
 --- !u!95 &6715650809533231941
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -173,12 +158,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &31926616043239025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660319978561495919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.181244, y: 2, z: 2.7128525}
+  m_Center: {x: -0.038196564, y: 0, z: -0.28158188}
 --- !u!1001 &1505285926375472159
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 5660319978561495955}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a03798b0b71fdca46b0b1589e889d295, type: 3}
@@ -254,6 +253,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 98e1f68e02387f042b2037ebb1d2af7e, type: 2}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a03798b0b71fdca46b0b1589e889d295, type: 3}
 --- !u!4 &1398755736233466868 stripped
 Transform:
@@ -267,7 +267,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &324388975519429494
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -284,4 +284,4 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0

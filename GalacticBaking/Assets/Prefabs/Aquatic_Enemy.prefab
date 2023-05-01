@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 32504159393790241}
   m_Layer: 0
   m_Name: Aquatic_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,6 @@ MonoBehaviour:
   attackRange: 15
   playerInSightRange: 0
   playerInAttackRange: 0
-  inPursuit: 0
 --- !u!195 &4862063635090227981
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -148,6 +147,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 7786021812805950411}
     m_Modifications:
     - target: {fileID: -9045894828985000957, guid: 3601c06d65daac847ab55893b6305973, type: 3}
@@ -239,6 +239,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: f9b9b968ddecff94eb855ed67703f8ab, type: 2}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3601c06d65daac847ab55893b6305973, type: 3}
 --- !u!1 &7084186210663780578 stripped
 GameObject:
@@ -247,7 +248,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1969013744138496956
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -264,7 +265,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5608327757255083926
 MonoBehaviour:
   m_ObjectHideFlags: 0
